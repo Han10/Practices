@@ -1,0 +1,20 @@
+import java.util.Hashtable;
+
+public class TwoSum {
+
+	public static void main(String[] args) {
+		int[] arr = { 3, 2, 4 };
+		int sum = 6;
+		Hashtable<Integer, Integer> tmp = new Hashtable<Integer, Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			tmp.put(arr[i], i);
+		}
+		for (int i = 0; i < arr.length; i++) {
+			int sub = sum - arr[i];
+			if (sub != 0 && tmp.contains(sub)) {
+
+				System.out.println(i + "," + tmp.get(sub));
+			}
+		}
+	}
+}
